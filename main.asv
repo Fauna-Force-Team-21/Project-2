@@ -1,6 +1,7 @@
 clc
 clear
-PM_10 = input("What is the mass of PM-10?: ");
-NO2 = input("What is the mass of NO2: ");
-SO2 = input("What is the mass of S0: ");
-NO  = input("")
+import ParticleAmount
+import gravityCalc
+particle_diameter = input("What is the diameter of X particle: ")
+gravityForce = gravityCalc(particle_diameter)
+total = ParticleAmount(1000)
