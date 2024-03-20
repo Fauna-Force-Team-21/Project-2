@@ -1,4 +1,4 @@
-function [totals] = particleAmount(particles)
+function [totals] = ParticleAmount(particles)
     ugToG = 1e-6;
     pm25 = 20.7;
     pm10 = 52.1;
@@ -7,6 +7,8 @@ function [totals] = particleAmount(particles)
     so2 = 2.1;
     co = 523.8;
     c6h6 = 13;
+
+    %comment
 
 totalMass = pm25 + pm10 + o3 + no2 + so2 + co + c6h6;
     keys = ["pm25", "pm10", "o3", "no2", "co", "c6h6"];
