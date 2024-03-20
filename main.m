@@ -1,4 +1,4 @@
 clc
 clear
-
-disp("hello world!");
+particle_diameter = 5
+gravityForce = gravityCalc(particle_diameter)
