@@ -1,7 +1,6 @@
 clc
 clear
-import ParticleAmount
-import gravityCalc
-particle_diameter = input("What is the diameter of X particle: ")
-gravityForce = gravityCalc(particle_diameter)
+%particle_diameter = input("What is the diameter of X particle: ")
+%gravityForce = particleGravity(particle_diameter);
 total = ParticleAmount(1000)
+Expression = (1 / 2)

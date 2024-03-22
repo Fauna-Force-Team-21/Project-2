@@ -11,7 +11,7 @@ function [totals] = ParticleAmount(particles)
     %comment
 
 totalMass = pm25 + pm10 + o3 + no2 + so2 + co + c6h6;
-    keys = ["pm25", "pm10", "o3", "no2", "co", "c6h6"];
+    keys = ["pm25", "pm10", "o3", "no2", "so2", "co", "c6h6"];
     values = [pm25, pm10, o3, no2, so2, co, c6h6];
     values = values ./ totalMass .* particles;
     totals = dictionary(keys, values);

@@ -1,8 +1,4 @@
-clc
-clear
-%particle_diameter = input("What is the diameter of X particle: ")
-%gravityForce = particleGravity(particle_diameter);
-
+function[a_vert, v_vert, d_vert] = particleMotionEquations()
 p_fluid = 1.229;
 v_0 = 3
 g = 9.81;
@@ -12,7 +8,7 @@ A = pi * (d / 2)^2;
 u = 1.73 * 10^(-5);
 C_d = 0.47;
 V = (4 / 3) * pi * (d / 2)^3;
-m = input("What is the mass of particle: ");
+m = 2.407 * 10^(-24)
 p_particle = m / V;
 q = 1.6 * 10^(-19);
 H = 7;
@@ -25,5 +21,9 @@ F_g = (pi / 6) * p_particle * g * (d)^3;
 F_drag = (3 * pi * u * d * v_term^2);
 F_s = (q^2) / (2 * pi * A * e_0);
 F_e = ((q^2 * c_t) / (2 * e_0)) * (2 * D_vert - H);
-a_t = (F_buoyant + F_g + F_drag + F_s + F_e) / m;
- 
+a_t = (F_buoyant + F_g - F_drag - F_s - F_e) / m;
+
+a_t = (pi / 6) * p_fluid * g * (d)^3 + (pi / 6) * p_particle * g * (d)^3 + (3 * pi * u * d * v_term^2) + (q^2) / (2 * pi * A * e_0)
+
+end
+
