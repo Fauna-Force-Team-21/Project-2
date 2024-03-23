@@ -7,7 +7,7 @@ A = 4*pi*(d/2)^2;
 e0 = 8.854187817*10^-12;
 H = 7;
 Cd = 0.47;
-o = idk; 
+o = q / H^2; 
 ct = 0;
 
 gravity = (pi/6)*(p_fluid-p_particle)*g*d^3;
