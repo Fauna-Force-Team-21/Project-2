@@ -9,7 +9,7 @@ C_d = 0.47; %Unitless
 V = (4 / 3) * pi * (d / 2)^3; %m^3
 m = 2.407 * 10^(-24) % kg
 p_particle = m / V; %kg / m^3
-q = 1.6 * 10^(-19); % C
+q = 1.6 * 10^(-19) % C
 H = 3; %m 
 e_0 = 8.854187817 * 10^(-12); %F / m
 v_term = sqrt((2 * m * g) / (p_fluid * A * C_d)); % m / s
@@ -24,15 +24,16 @@ eletric_other = (q^2*ct);
 %at = ((pi/6)*(p_fluid-p_particle)*g*d^3 + 0.5*p_fluid*Cd*((pi/4)*d^2)*s(2)^2 - (q*o)/(2*e0) + (q^2*ct)/(2*e0)*(2*s(1)-H))/((pi/6)*p_particle*d^3);
 
 tspan = [0, 1.144];
-x0 = [H, 3, gravity, buoyent, drag, collector, eletric_other, m];
+x0 = [H, -3, gravity, buoyent, drag, collector, eletric_other, m];
 opt = odeset('RelTol',1*exp(-8), 'AbsTol',1*exp(-8));
 [T,X] = ode45(@dynamic, tspan, x0, opt);
 disp([T, X])
+
 plot(T,(X(:,1)))
 hold off;
 ax = gca;
 %xlim(ax, [0, 0.4 * 10 ^(-8)])
-%ylim(ax, [0, 3]);
+ylim(ax, [0, 3]);
 %grid('on');
 
 function dsdt = dynamic(t,s)
