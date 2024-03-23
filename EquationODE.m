@@ -21,10 +21,9 @@ mass = (pi/6)*p_particle*d^3;
 %at = ((pi/6)*(p_fluid-p_particle)*g*d^3 + 0.5*p_fluid*Cd*((pi/4)*d^2)*s(2)^2 - (q*o)/(2*e0) + (q^2*ct)/(2*e0)*(2*s(1)-H))/((pi/6)*p_particle*d^3);
 
 tspan = [0, 1.144];
-x0 = [H, 3, gravity, buoyent, drag, collector, eletric_other, H, mass];
+x0 = [H, -3, gravity, buoyent, drag, collector, eletric_other, H, mass];
 opt = odeset('RelTol',1*exp(-8), 'AbsTol',1*exp(-8));
 [T,X] = ode45(@dynamic, tspan, x0, opt);
-
 plot(T,(X(:,1)))
 disp([T,X])
 
