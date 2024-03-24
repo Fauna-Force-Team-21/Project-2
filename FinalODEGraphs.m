@@ -15,18 +15,17 @@ u = 1.73 * 10^(-5);
 v_term =sqrt((2 * m * g) / (p_fluid * A * C_d)); % m / s
 gravity = (pi/6)*(p_fluid-p_particle)*g*d^3;
 buoyent = (pi/6)*(p_fluid)*g*d^3;
-drag = 0.5*p_fluid*Cd*(pi/4);
-%drag = (3 * pi * u * d * v_term^2);
+%drag = 0.5*p_fluid*C_d*(pi/4);
+drag = (3 * pi * u * d * v_term^2);
 collector = (q*o)/(2*e0);
 eletric_other = (q^2*ct);
 mass = (pi/6)*p_particle*d^3;
-%at = ((pi/6)*(p_fluid-p_particle)*g*d^3 + 0.5*p_fluid*Cd*((pi/4)*d^2)*s(2)^2 - (q*o)/(2*e0) + (q^2*ct)/(2*e0)*(2*s(1)-H))/((pi/6)*p_particle*d^3);
 
 tspan = [0, 1.000000315];
 x0 = [H, -3, gravity, buoyent, drag, collector, eletric_other, H, mass];
 opt = odeset('RelTol',1*exp(-8), 'AbsTol',1*exp(-8));
 [T,X] = ode45(@dynamic, tspan, x0, opt);
-%plot(T,X(:,1))
+plot(T,X(:,1))
 ylim([0, 3]); % Adjust y-axis limits
 xlabel('Time');
 ylabel('Solution (X)');
