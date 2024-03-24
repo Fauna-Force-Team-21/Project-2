@@ -35,7 +35,7 @@ disp([T, X])
 conts = [];
 conts(1) = 0
 
-for i = 2:41
+for i = 2:3245
     %ct = ((pi/6)* p_particle*d^3*X(i,3) - (pi/6)*(p_fluid-p_particle)*g*d^3 - (3 * pi * u * d * ((X(i,2))^2) + (q*o)/(2*e0))) * ((2*e0)/(q^2 * (2*X(i,1)-H)));
     ct = ((pi/6)* p_particle *d^3*(X(i,3)) - (pi/6)*(p_fluid-p_particle)*g*d^3 - (0.5*p_fluid*C_d*(pi/4) * (d)^2 * ((X(i,2) - 3)^2) + (q*o)/(2*e0))) * ((2*e0)/(q^2 * (2*(X(i,1)+H)-H)));
     ct = abs(ct)
@@ -51,13 +51,11 @@ title("Concentration of Particles by Time")
 
 function dsdt = dynamic(t,s)
     dsdt(1) = s(2);
-    dsdt(2) = (s(3) + s(4)*s(2) - s(5) + s(6)*(2*s(1)-s(1)))/s(7);
+    dsdt(2) = (s(3) + s(4)*s(2) - s(5) + s(6)*(2*s(1)-3))/s(7);
     dsdt(3) = 0;
     dsdt(4) = 0;
     dsdt(5) = 0;
     dsdt(6) = 0;
     dsdt(7) = 0;
-    dsdt(8) = 0;
-    dsdt(9) = 0;
     dsdt = dsdt.';
 end
