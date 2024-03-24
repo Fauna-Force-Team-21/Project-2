@@ -33,22 +33,16 @@ function [totals] = ParticleAmount(particles)
     for i = rand(1, particles)
         if(i < pm25P)
             pm25i = pm25i + 1;
-        elseif(i < pm10P)
+        elseif(i < pm10p)
             pm10i = pm10i + 1;
-        elseif(i < o3P)
+        elseif(i < o3p)
             o3i = o3i + 1;
-        elseif(i < no2P)
+        elseif(i < no2p)
             no2i = no2i + 1;
-        elseif(i < so2P)
-            so2i = so2i + 1;
-        elseif(i < coP)
-            coi = coi + 1;
-        else
-            c6h6i = c6h6i + 1;
-        end
     end
 
     keys = ["pm25", "pm10", "o3", "no2", "so2", "co", "c6h6"];
     values = [pm25i, pm10i, o3i, no2i, so2i, coi, c6h6i];
+    values = values ./ totalMass .* particles;
     totals = dictionary(keys, values);
 end
