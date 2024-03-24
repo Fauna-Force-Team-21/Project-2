@@ -51,7 +51,7 @@ title("Concentration of Particles by Time")
 
 function dsdt = dynamic(t,s)
     dsdt(1) = s(2);
-    dsdt(2) = (s(3) + s(4)*s(2) - s(5) + s(6)*(2*s(1)-s(1)))/s(7);
+    dsdt(2) = 
     dsdt(3) = 0;
     dsdt(4) = 0;
     dsdt(5) = 0;
