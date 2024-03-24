@@ -1,0 +1,29 @@
+function [] = particlePlots(initial, concentration)
+part
+tspan = [0, 1.000000315];
+opt = odeset('RelTol',1*exp(-8), 'AbsTol',1*exp(-8));
+[T,X] = ode45(@dynamic, tspan, initial, opt);
+figure (1)
+plot(T, X(:, 1))
+figure (2)
+plot(T, X(:, 2))
+figure (3)
+plot(T, X(:, 3))
+figure(4)
+plot(T, concentration)
+xlabel("Time")
+ylabel("Concentration of Particles")
+title("Concentration of Particles by Time")
+end
+function dsdt = dynamic(t,s)
+    dsdt(1) = s(2);
+    dsdt(2) = (s(4) + s(5) - s(3) - s(6) - s(7)) / s(8);
+    dsdt(3) = 0;
+    dsdt(4) = 0;
+    dsdt(5) = 0;
+    dsdt(6) = 0;
+    dsdt(7) = 0;
+    dsdt(8) = 0;
+    dsdt(9) = 0;
+    dsdt = dsdt.';
+end

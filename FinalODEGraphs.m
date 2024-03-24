@@ -47,7 +47,7 @@ ylabel("Concentration of Particles")
 title("Concentration of Particles by Time")
 function dsdt = dynamic(t,s)
     dsdt(1) = s(2);
-    dsdt(2) = (s(4) + s(5) - s(3) - s(6) - s(7)) / s(8);
+    dsdt(2) = (s(4) + s(5) - s(3) - s(6) - s(7)) / s(9);
     dsdt(3) = 0;
     dsdt(4) = 0;
     dsdt(5) = 0;
