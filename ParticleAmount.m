@@ -1,4 +1,5 @@
 function [totals] = ParticleAmount(particles)
+    micro = 10^(-6);
     % ppm values
     pm25 = 20.7;
     pm10 = 52.1;
