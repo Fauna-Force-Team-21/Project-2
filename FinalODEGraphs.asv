@@ -32,13 +32,9 @@ xlabel('Time');
 ylabel('Solution (X)');
 title('Solution Plot');
 
-conts = [];
 for i = 1:41
-    ct = ((pi/6)*d^3*X(i,3) - (pi/6)*(p_fluid-p_particle)*g*d^3 - 0.5*p_particle*C_d*((pi/4)*d^2)*(X(i,2))^2 + (q*o)/(2*e0))* ((2*e0)/(q^2 * (2*X(i,3)-H)));
-    conts(i) = ct;
+    ct = (pi/6)*d^3*X(i,3) - (pi/6)*(p_fluid-p_particle)*g*d^3 - 0.5*p_particle*C_d*((pi/4)*d^2)*(X(i,2))^2
 end
-disp(conts)
-
 function dsdt = dynamic(t,s)
     dsdt(1) = s(2);
     dsdt(2) = (s(4) + s(5) - s(3) - s(6) - s(7)) / s(8);
