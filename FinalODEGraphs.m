@@ -12,6 +12,7 @@ C_d = 0.47;
 o = q /H^2 + H; 
 ct = 0;
 u = 1.73 * 10^(-5);
+
 v_term =sqrt((2 * m * g) / (p_fluid * A * C_d)); % m / s
 gravity_bouyent = (pi/6)*(p_fluid-p_particle)*g*d^3;
 %buoyent = (pi/6)*(p_fluid)*g*d^3;
@@ -26,6 +27,7 @@ x0 = [H, 0, gravity_bouyent, drag, collector, eletric_other, mass];
 opt = odeset('RelTol',1*exp(-8), 'AbsTol',1*exp(-8));
 [T,X] = ode45(@dynamic, tspan, x0, opt);
 
+figure (1)
 plot(T,X(:,1))
 ylim([0, 3]); % Adjust y-axis limits
 xlabel('Time');
@@ -43,7 +45,7 @@ for i = 2:3245
 end
 
 disp(conts)
-figure(1)
+figure(2)
 plot(T, conts)
 xlabel("Time")
 ylabel("Concentration of Particles")
