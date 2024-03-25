@@ -5,7 +5,6 @@ g = 9.81;
 d = 0.00001;
 p_fluid = 1.229;
 pi = 3.141592653589793;
-m = 2.407*10^-24;
 p_particle = (m)/(4/3*pi*(d/2)^3);
 q = 1.6*10^-19;
 e0 = 8.854187817*10^-12;
@@ -16,7 +15,7 @@ ct = 0;
 collector = (q*o)/(2*e0);
 Fe = collector;
 u = 1.73*10^(-5);
-tspan = [0, 1.3];
+tspan = [0, 5.2];
 opt = odeset('RelTol',1*exp(-8), 'AbsTol',1*exp(-8));
 [T,X] = ode45(@dynamic, tspan, initial, opt);
 axt = [];
@@ -29,7 +28,7 @@ for t=1:rows
     dxt(t) = Fe / ((2 * m)) * T(t)^2;
 end
 conts = [];
-conts(1) = 1 * 10^(17);
+conts(1) = 4.2909 * 10^(19);
 
 for i = 2:rows
     ct = ((pi/6)* p_particle *d^3*(sqrt(X(i,3)^2 + axt(i)^2)) - (pi/6)*(p_fluid-p_particle)*g*d^3 - (0.5*p_fluid*C_d*(pi/4) * (d)^2 * (sqrt(X(i,2)^2 + vxt(i)^2) + (q*o)/(2*e0))) * ((2*e0)/(q^2 * (2*(sqrt(X(i,1)^2 + dxt(i)^2))-H))));

@@ -1,5 +1,5 @@
 function [] = particlePlots(initial, concentration, particleName)
-tspan = [0, 1.3];
+tspan = [0, 5.2];
 opt = odeset('RelTol',1*exp(-8), 'AbsTol',1*exp(-8));
 [T,X] = ode45(@dynamic, tspan, initial, opt);
 m = initial(8);

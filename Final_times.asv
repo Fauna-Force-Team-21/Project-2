@@ -10,10 +10,10 @@ PM_10 = calculationInputs(masses(7), diameter(7));
 PM_2_5 = calculationInputs(masses(8), diameter(8));
 
 g = 9.81;
-d = diameter(1);
+d = diameter(4);
 p_fluid = 1.229;
 pi = 3.141592653589793;
-m = masses(1);
+m = masses(3);
 p_particle = (m)/(4/3*pi*(d/2)^3);
 q = 1.6*10^-19;
 e0 = 8.854187817*10^-12;
@@ -32,7 +32,7 @@ Fe = collector
 eletric_other = (q^2*ct);
 %mass = (pi/6)*p_particle*d^3;
 
-tspan = [0, 1000];
+tspan = [0, 1000000000000];
 x0 = [H, -3, gravity, bouyent, drag, collector, eletric_other, m];
 opt = odeset('RelTol',1e-8, 'AbsTol',1e-8);
 [T,X] = ode45(@dynamic, tspan, x0, opt);
