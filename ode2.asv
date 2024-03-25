@@ -13,16 +13,16 @@ o = q /H^2 + H;
 ct = 0;
 u = 1.73 * 10^(-5);
 
-gravity = (pi/6)*p_particle*g*d^3;
-bouyent = (pi/6)*p_fluid*g*d^3;
+gravity = (pi/)
+bouyent = 
 drag = 0.5*p_fluid*C_d*(pi/4);
 %drag = (3 * pi * u * d);
 collector = (q*o)/(2*e0);
 eletric_other = (q^2*ct);
 mass = (pi/6)*p_particle*d^3;
 
-tspan = [0, 1.5];
-x0 = [H, -3, gravity, bouyent, drag, collector, eletric_other, mass];
+tspan = [-3, 1];
+x0 = [H, -3, gravity_bouyent, drag, collector, eletric_other, mass];
 opt = odeset('RelTol',1*exp(-8), 'AbsTol',1*exp(-8));
 [T,X] = ode45(@dynamic, tspan, x0, opt);
 
@@ -36,12 +36,11 @@ title('Solution Plot');
 
 function dsdt = dynamic(t,s)
     dsdt(1) = s(2);
-    dsdt(2) = s(5)*s(2)^2 + s(4) - s(3) - s(7)*(2*s(1)-3);
+    dsdt(2) = ;
     dsdt(3) = 0;
     dsdt(4) = 0;
     dsdt(5) = 0;
     dsdt(6) = 0;
     dsdt(7) = 0;
-    dsdt(8) = 0;
     dsdt = dsdt.';
 end
