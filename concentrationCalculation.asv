@@ -36,6 +36,8 @@ for i = 2:rows
     %ct = abs(ct);
     ct = ct / 100;
     conts(i) = ct + conts(i-1);
+    if conts(i) > 0
+    end
 end
 end
 function dsdt = dynamic(t,s)

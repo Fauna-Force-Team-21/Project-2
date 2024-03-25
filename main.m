@@ -13,11 +13,11 @@ PM_2_5 = calculationInputs(masses(8), diameter(8));
 %particle_diameter = input("What is the diameter of X particle: ")
 %gravityForce = particleGravity(particle_diameter);
 
-volume = VolumeAir(1, 1.8, 3)
-VolumeToParticles(volume)
+%volume = VolumeAir(1, 1.8, 3)
+%VolumeToParticles(volume)
 
-volume = VolumeAir(24, 1.8, 3)
-VolumeToParticles(volume)
+%volume = VolumeAir(1/3600, 1.8, 3)
+%VolumeToParticles(volume)
 % ParticleAmount(1000)
 %-----------------------------------------------------------------
 concNO2 = concentrationCalculation(NO2, masses(1), diameter(1));
