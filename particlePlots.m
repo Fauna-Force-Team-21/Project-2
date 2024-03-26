@@ -10,9 +10,7 @@ for t=1:rows
     vxt(t) = ((Fe / m) * T(t));
     dxt(t) = Fe / ((2 * m)) * T(t)^2;
 end
-magX = sqrt(X(:,1).^2 + dxt(:).^2);
-magV = sqrt(X(:,2).^2 + vxt(:).^2);
-magA = sqrt(X(:,3).^2 + axt(:).^2);
+
 figure (1)
 plot(T, X(:,1))
 xlabel("Time")

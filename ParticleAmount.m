@@ -49,7 +49,5 @@ function [totals] = ParticleAmount(particles)
         end
     end
 
-    keys = ["pm25", "pm10", "o3", "no2", "so2", "co", "c6h6"];
-    values = [pm25i, pm10i, o3i, no2i, so2i, coi, c6h6i];
-    totals = dictionary(keys, values);
+    totals = table(pm25i, pm10i, o3i, no2i, so2i, coi, c6h6i);
 end

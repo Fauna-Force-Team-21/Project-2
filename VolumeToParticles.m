@@ -1,15 +1,13 @@
 function [totals] = VolumeToParticles(volume)
-    micro = 10^(-6);
-    avogradro = 6.023 * 10^(23);
-
+    micro = 10^(-9);
     % kg/m^3
-    pm25 = 20.7 * micro / 1000;
-    pm10 = 52.1 * micro / 1000;
-    o3 = 121.8 * micro / 1000;
-    no2 = 32.7 * micro / 1000; 
-    so2 = 2.1 * micro / 1000;
-    co = 523.8 * micro / 1000;
-    c6h6 = 13 * micro / 1000;
+    pm25 = 20.7 * micro;
+    pm10 = 56 * micro;
+    o3 = 121.8 * micro;
+    no2 = 32.7 * micro; 
+    so2 = 2.1 * micro;
+    co = 523.8 * micro;
+    c6h6 = 13 * micro;
     
     pm25g = pm25 * volume;
     pm10g = pm10 * volume;

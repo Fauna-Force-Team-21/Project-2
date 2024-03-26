@@ -29,9 +29,12 @@ concO3 = concentrationCalculation(O3, masses(6), diameter(6));
 concPM10 = concentrationCalculation(PM_10, masses(7), diameter(7));
 concPM_2_5 = concentrationCalculation(PM_2_5, masses(8), diameter(8));
 %------------------------------------------------------------------
-particleName = input("What is the particle name: ", 's');
-list = input("What is the list name: ");
-concPM10 = input("What is the concentration name: ");
-particlePlots(list, concPM10, particleName);
 
+% particleName = input("What is the particle name: ", 's');
+% list = input("What is the list name: ");
+% concPM10 = input("What is the concentration name: ");
+% particlePlots(list, concPM10, particleName);
 
+volume = VolumeAir(1/3600, 1.8, 3)
+particles = VolumeToParticles(volume)
+ParticleSimulation(particles, NO2)
