@@ -16,8 +16,8 @@ PM_2_5 = calculationInputs(masses(8), diameter(8));
 %volume = VolumeAir(1, 1.8, 3)
 %VolumeToParticles(volume)
 
-%volume = VolumeAir(1/3600, 1.8, 3)
-%VolumeToParticles(volume)
+volume = VolumeAir(1/3600 * 5.5, 1.8, 3)
+VolumeToParticles(volume)
 % ParticleAmount(1000)
 %-----------------------------------------------------------------
 concNO2 = concentrationCalculation(NO2, masses(1), diameter(1));

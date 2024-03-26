@@ -2,6 +2,7 @@ function [x0] = calculationInputs(m, d)
 g = 9.81;
 p_fluid = 1.229;
 pi = 3.141592653589793;
+%m =
 p_particle = (m)/(4/3*pi*(d/2)^3);
 q = 1.6*10^-19;
 e0 = 8.854187817*10^-12;
